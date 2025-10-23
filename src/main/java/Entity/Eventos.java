@@ -1,18 +1,22 @@
 package Entity;
 
 
+import DTO.EventosDTO.AtualizarEventoDto;
+import DTO.EventosDTO.EventosDto;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.NotBlank;
+import lombok.*;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Table(name="eventos")
-@Entity(name="Eventos")
+@Entity(name="Evento")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -25,8 +29,12 @@ public class Eventos {
     private Date data;
     private int numero_convidados;
 
-    @Enumerated(EnumType.STRING)
-    private Tarefa tarefa ;
+    //@Enumerated(EnumType.STRING)
+    //private Tarefa tarefa ;
+
+    @OneToMany(mappedBy = "evento", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private List<Tarefas> tarefas = new ArrayList<>();
 
     @Embedded
     private Endereco endereco;
@@ -35,7 +43,7 @@ public class Eventos {
         this.nome_evento = dados.nome_evento();
         this.data= dados.data();
         this.numero_convidados = dados.numero_convidados();
-        this.tarefa = dados.tarefa();
+        this.tarefas = dados.tarefa();
         this.endereco = new Endereco(dados.endereco());
 
     }
@@ -53,5 +61,8 @@ public class Eventos {
         if (dados.endereco() !=null){
             this.endereco.atualizarEndereco(dados.endereco());
         }
+    }
+
+    public void setNome(@NotBlank String s) {
     }
 }

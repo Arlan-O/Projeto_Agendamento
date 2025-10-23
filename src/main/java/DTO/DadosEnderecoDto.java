@@ -1,5 +1,6 @@
 package DTO;
 
+import Entity.Endereco;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
@@ -17,4 +18,15 @@ public record DadosEnderecoDto(
         String cidade,
         @NotBlank
         String uf) {
+
+        public DadosEnderecoDto(Endereco endereco) {
+                this(
+                        endereco.getLocal(),
+                        endereco.getLogradouro(),
+                        endereco.getNumero(),
+                        endereco.getCep(),
+                        endereco.getCidade(),
+                        endereco.getUf()
+                );
+        }
 }

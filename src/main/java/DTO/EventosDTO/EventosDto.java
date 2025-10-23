@@ -1,4 +1,4 @@
-package DTO;
+package DTO.EventosDTO;
 
 import Entity.Endereco;
 import jakarta.validation.Valid;
@@ -18,7 +18,7 @@ public record EventosDto(
         int numero_convidados,
 
         @NotBlank
-        String Tarefa,
+        String tarefa,
 
         @NotNull
         @Valid

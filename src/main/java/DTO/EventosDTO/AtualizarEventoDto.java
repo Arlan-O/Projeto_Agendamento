@@ -1,5 +1,6 @@
-package DTO;
+package DTO.EventosDTO;
 
+import DTO.DadosEnderecoDto;
 import jakarta.validation.constraints.NotNull;
 
 public record AtualizarEventoDto(
