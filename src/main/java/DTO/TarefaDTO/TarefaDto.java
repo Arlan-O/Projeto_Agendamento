@@ -1,6 +1,6 @@
-package DTO.TarefaDTO;
+package Agendamento.Sistema.DTO.TarefaDTO;
 
-import Entity.Tarefas;
+import Agendamento.Sistema.Entity.Tarefas;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -11,7 +11,7 @@ public record TarefaDto(
         @NotBlank
         String nome_tarefa
 ) {
-    public TarefaDto(Tarefas tarefas){
+    /*public TarefaDto(Tarefas tarefas){
         this(tarefas.getId(), tarefas.getNome_tarefa());
-    }
+    }*/
 }
