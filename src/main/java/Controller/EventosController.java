@@ -1,8 +1,9 @@
-package Controller;
+package Agendamento.Sistema.Controller;
 
-import DTO.EventosDTO.DadosCadastroEventos;
-import Entity.Eventos;
-import Repository.EventosRepository;
+import Agendamento.Sistema.DTO.EventosDTO.DadosCadastroEventos;
+import Agendamento.Sistema.DTO.EventosDTO.DadosListagemEventos;
+import Agendamento.Sistema.Entity.Eventos;
+import Agendamento.Sistema.Repository.EventosRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,9 @@ public class EventosController {
     public void cadastrarEvento(@RequestBody @Valid DadosCadastroEventos dados){
         repository.save(new Eventos(dados));
     }
+
     @GetMapping
-    public Page<DadosListagemEventos> listar(@PageableDefault (size= 6, sort = {"nome_evento"})Pageable page){
+    public Page<DadosListagemEventos> listar(@PageableDefault (size= 6, sort = {"data"})Pageable page){
         return repository.findAll(page).map(DadosListagemEventos::new);
     }
 }

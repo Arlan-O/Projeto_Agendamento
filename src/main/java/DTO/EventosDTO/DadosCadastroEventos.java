@@ -1,6 +1,6 @@
-package DTO.EventosDTO;
+package Agendamento.Sistema.DTO.EventosDTO;
 
-import Entity.Endereco;
+import Agendamento.Sistema.DTO.DadosEnderecoDto;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -22,9 +22,9 @@ public record DadosCadastroEventos(
 
         @NotNull (message = "Adicione o local do evento!")
         @Valid
-        Endereco endereco,
+        DadosEnderecoDto endereco,
 
         List<String> nomeTarefas
 
-        ) {
+) {
 }

@@ -1,4 +1,4 @@
-package Entity;
+package Agendamento.Sistema.Entity;
 
 
 import jakarta.persistence.*;
