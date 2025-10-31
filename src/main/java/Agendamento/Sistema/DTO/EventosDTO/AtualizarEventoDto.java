@@ -1,4 +1,4 @@
-package DTO.EventosDTO;
+package Agendamento.Sistema.DTO.EventosDTO;
 
 import DTO.DadosEnderecoDto;
 import jakarta.validation.constraints.NotNull;

@@ -3,15 +3,11 @@ package Agendamento.Sistema.Entity;
 
 import Agendamento.Sistema.DTO.EventosDTO.AtualizarEventoDto;
 import Agendamento.Sistema.DTO.EventosDTO.DadosCadastroEventos;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Table(name="eventos")
 @Entity(name="Eventos")
