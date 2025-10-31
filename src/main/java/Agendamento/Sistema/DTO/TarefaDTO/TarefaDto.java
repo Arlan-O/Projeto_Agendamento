@@ -1,6 +1,5 @@
 package Agendamento.Sistema.DTO.TarefaDTO;
 
-import Agendamento.Sistema.Entity.Tarefas;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 

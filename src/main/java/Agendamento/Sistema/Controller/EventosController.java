@@ -1,5 +1,6 @@
 package Agendamento.Sistema.Controller;
 
+import Agendamento.Sistema.DTO.EventosDTO.AtualizarEventoDto;
 import Agendamento.Sistema.DTO.EventosDTO.DadosCadastroEventos;
 import Agendamento.Sistema.DTO.EventosDTO.DadosListagemEventos;
 import Agendamento.Sistema.Entity.Eventos;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/eventos")
+@CrossOrigin(origins = "*")
 public class EventosController {
 
     @Autowired
@@ -28,5 +30,16 @@ public class EventosController {
     @GetMapping
     public Page<DadosListagemEventos> listar(@PageableDefault (size= 6, sort = {"data"})Pageable page){
         return repository.findAll(page).map(DadosListagemEventos::new);
+    }
+    @PutMapping
+    @Transactional
+    public void atualizarEventos(@RequestBody @Valid AtualizarEventoDto dados){
+        var evento = repository.getReferenceById(dados.id());
+        evento.atualizarEvento(dados);
+    }
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void deletar(@PathVariable long id){
+        repository.deleteById(id);
     }
 }
