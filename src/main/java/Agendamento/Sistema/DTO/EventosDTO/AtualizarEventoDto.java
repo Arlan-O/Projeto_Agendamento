@@ -1,7 +1,9 @@
 package Agendamento.Sistema.DTO.EventosDTO;
 
-import DTO.DadosEnderecoDto;
+import Agendamento.Sistema.DTO.DadosEnderecoDto;
 import jakarta.validation.constraints.NotNull;
+
+import java.util.Date;
 
 public record AtualizarEventoDto(
     @NotNull

@@ -9,7 +9,7 @@ public class CorsConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/eventos/**")  // Libera todos os endpoints que começam com /api/
+        registry.addMapping("/eventos/**")  // Libera todos os endpoints que começam com /
                 .allowedOrigins("*")       // Permite conexões de QUALQUER origem
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Permite estes métodos HTTP
                 .allowedHeaders("*");      // Permite todos os cabeçalhos
