@@ -45,6 +45,10 @@ public class Eventos {
 
 
     public void atualizarEvento(@Valid AtualizarEventoDto dados){
+        if(dados.nome_evento() != null){
+            this.nome_evento = dados.nome_evento();
+        }
+
         if(dados.data() !=null){
             this.data = dados.data();
         }
