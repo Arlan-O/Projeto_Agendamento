@@ -1,6 +1,6 @@
 package Agendamento.Sistema.DTO.EventosDTO;
 
-import Agendamento.Sistema.DTO.DadosEnderecoDto;
+import DTO.EventosDTO.DadosEnderecoDto;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;

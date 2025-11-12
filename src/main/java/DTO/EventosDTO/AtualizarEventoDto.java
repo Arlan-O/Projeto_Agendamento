@@ -1,7 +1,9 @@
 package DTO.EventosDTO;
 
-import DTO.DadosEnderecoDto;
+//import DTO.DadosEnderecoDto;
 import jakarta.validation.constraints.NotNull;
+
+import java.util.Date;
 
 public record AtualizarEventoDto(
     @NotNull
@@ -11,5 +13,5 @@ public record AtualizarEventoDto(
 
     Date data,
 
-    DadosEnderecoDto endereco) {
+    DTO.EventosDTO.DadosEnderecoDto endereco) {
 }

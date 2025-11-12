@@ -1,8 +1,9 @@
 package Agendamento.Sistema.Entity;
 
 
-import Agendamento.Sistema.DTO.EventosDTO.AtualizarEventoDto;
+//import Agendamento.Sistema.DTO.EventosDTO.AtualizarEventoDto;
 import Agendamento.Sistema.DTO.EventosDTO.DadosCadastroEventos;
+import DTO.EventosDTO.AtualizarEventoDto;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
@@ -48,14 +49,14 @@ public class Eventos {
     }
 
 
-    public void atualizarEvento(@Valid AtualizarEventoDto dados){
+    /*public void atualizarEvento(@Valid AtualizarEventoDto dados){
         if(dados.data() !=null){
             this.data = dados.data();
         }
         if (dados.endereco() !=null){
             this.endereco.atualizarEndereco(dados.endereco());
         }
-    }
+    }*/
 
     public long getId() {
         return id;

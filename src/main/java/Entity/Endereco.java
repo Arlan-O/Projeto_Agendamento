@@ -1,7 +1,7 @@
 package Agendamento.Sistema.Entity;
 
 
-import Agendamento.Sistema.DTO.DadosEnderecoDto;
+import DTO.EventosDTO.DadosEnderecoDto;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
