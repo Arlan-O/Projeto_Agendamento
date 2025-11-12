@@ -31,10 +31,10 @@ public class EventosController {
     public Page<DadosListagemEventos> listar(@PageableDefault (size= 6, sort = {"data"})Pageable page){
         return repository.findAll(page).map(DadosListagemEventos::new);
     }
-    @PutMapping
+    @PutMapping("/{id")
     @Transactional
-    public void atualizarEventos(@RequestBody @Valid AtualizarEventoDto dados){
-        var evento = repository.getReferenceById(dados.id());
+    public void atualizarEventos(@PathVariable Long id,  @RequestBody @Valid AtualizarEventoDto dados){
+        var evento = repository.getReferenceById(id);
         evento.atualizarEvento(dados);
     }
     @DeleteMapping("/{id}")
