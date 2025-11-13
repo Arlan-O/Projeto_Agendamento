@@ -1,5 +1,5 @@
-# Projeto Agendamento
-Sistema de agendamento, sendo possível ser adaptado para mais de um segmento (barbearia, restaurante, manicure, etc.)
+# Projeto Gestão de festas
+Sistema para organizadores de festas e eventos, possivel cadastro de eventos (nome, data, endereco, número de convidados)
 
 POST
 
