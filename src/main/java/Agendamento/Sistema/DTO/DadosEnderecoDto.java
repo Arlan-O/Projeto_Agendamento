@@ -12,7 +12,7 @@ public record DadosEnderecoDto(
         @NotBlank
         String numero,
         @NotBlank
-        @Pattern(regexp = "\\d{8}")
+        @Pattern(regexp = "\\d{9}")
         String cep,
         @NotBlank
         String cidade,

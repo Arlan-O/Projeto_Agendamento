@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -31,11 +32,18 @@ public class EventosController {
     public Page<DadosListagemEventos> listar(@PageableDefault (size= 6, sort = {"data"})Pageable page){
         return repository.findAll(page).map(DadosListagemEventos::new);
     }
-    @PutMapping("/{id")
+    @GetMapping("/{id}")
+    public ResponseEntity<DadosListagemEventos> detalhar(@PathVariable Long id){
+        var evento = repository.findById(id).orElseThrow(() -> new RuntimeException("Evento não encontardo!"));
+        return ResponseEntity.ok(new DadosListagemEventos((evento)));
+    }
+
+    @PutMapping("/{id}")
     @Transactional
-    public void atualizarEventos(@PathVariable Long id,  @RequestBody @Valid AtualizarEventoDto dados){
+    public ResponseEntity<Void> atualizarEventos(@PathVariable Long id, @RequestBody @Valid AtualizarEventoDto dados){
         var evento = repository.getReferenceById(id);
         evento.atualizarEvento(dados);
+        return ResponseEntity.noContent().build();
     }
     @DeleteMapping("/{id}")
     @Transactional
