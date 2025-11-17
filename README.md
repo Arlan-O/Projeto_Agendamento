@@ -12,7 +12,7 @@ Este projeto é uma API RESTful desenvolvida para ser o backend do **Sistema de 
 
 Foi desenvolvido como um projeto de estudos, aplicando as melhores práticas de desenvolvimento de APIs com Spring Boot, como o uso de DTOs (Data Transfer Objects) para a troca de informações, o padrão Repository com Spring Data JPA para acesso ao banco de dados e a separação de responsabilidades em Controllers e Services.
 
-Esta API serve como backend para o [Aplicativo Frontend em React Native](https://github.com/SEU-USUARIO/LINK-PARA-SEU-FRONTEND).
+Esta API serve como backend para o [Aplicativo Frontend em React Native](https://github.com/Arlan-O/Projeto_React_Native.git).
 
 ---
 
